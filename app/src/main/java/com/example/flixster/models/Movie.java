@@ -16,7 +16,7 @@ public class Movie {
     public Movie(JSONObject jsonObject) throws JSONException {
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
-        overview = jsonObject.getString("poster_path");
+        overview = jsonObject.getString("overview");
     }
 
     public static List<Movie> fromJSONArray(JSONArray movieJsonArray) throws JSONException {
