@@ -2,6 +2,7 @@ package com.example.flixster.adapters;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -51,7 +52,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                 imageURL = movie.getBackdropPath();
             else
                 imageURL = movie.getPosterPath();
-            Glide.with(context).load(imageURL).into(ivPoster);
+            Glide.with(context).load(imageURL).placeholder(Drawable.createFromPath("http//:via.placeholder.com/120.png")).into(ivPoster);
         }
     }
 
