@@ -16,6 +16,7 @@ public class Movie {
     private String title;
     private String overview;
     private double rating;
+    private int movieId;
 
     public Movie() {/*empty constructor needed for Parceler*/}
 
@@ -25,6 +26,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         rating = jsonObject.getDouble("vote_average");
+        movieId = jsonObject.getInt("id");
     }
 
     public static List<Movie> fromJSONArray(JSONArray movieJsonArray) throws JSONException {
@@ -74,4 +76,13 @@ public class Movie {
     public void setRating(double rating) {
         this.rating  = rating;
     }
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
 }
